@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+{% block main %}
+
+<div id="main_home">
+  <div id="last_project">
+    <h2>Last project</h2>
+    <ul>
+      {% for key in key_list %}
+      {% if key == "project_name" %}
+      <li class="li_a"><a href="/projects/{{ last_project['project_id'] }}">{{ key }}: {{ last_project[key] }}</a></li>
+      {% elif key == "small_image"%}
+      <li class="li_small_img"><img alt="{{ last_project['project_id'] }}" src="/static/bilder/{{ last_project['project_id'] }}.png"/></li>
+      {% else %}
+      <li class="li_other">{{ key }}: {{ last_project[key] }}</li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+  
+{% endblock %}

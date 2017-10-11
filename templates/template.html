@@ -1,0 +1,35 @@
+<!Doctype html>
+
+<html lang="sv">
+  <head>
+    <title>Portfolio</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+  </head>
+
+  <body>
+    <header>
+      <div id="title">
+	<img id="logo"
+	     alt="logo"
+	     src="{{ url_for('static', filename='bilder/logo.png') }}"/>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for("home") }}">Home</a></li>
+	  <li><a href="{{ url_for("projects") }}">Projects</a></li>
+	  <li><a href="{{ url_for("skills") }}">Skills</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      {% block main %}
+      {% endblock %}
+    </main>
+    <footer>
+      <h2>Följ eller kontakta mig via:</h2>
+      <ul>
+      </ul>
+    </footer>
+  </body>
+</html>

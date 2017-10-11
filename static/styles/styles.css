@@ -1,0 +1,192 @@
+body {
+    text-align: center;
+}
+
+header {
+    margin: 4em 4em 2em 4em;
+    padding: 2em;
+    background-color: grey;
+    box-shadow: 10px 10px 5px lightgrey;
+}
+
+#logo {
+    display: block;
+    width: 20%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 1em;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    font-size: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    background-color: grey;
+    box-shadow: 10px 10px 5px lightgrey;
+    margin: 2em 4em 4em 4em;
+    padding: 2em;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer li {
+    display: inline;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+
+/* projects sidan nedan */
+
+#result_project {
+    margin: auto;
+    width: 70%;
+}
+
+.div_projects {
+    display: inline;
+    width: 20%;
+}
+
+.div_projects ul {
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0em;
+    margin: 3em 0.5em 3em 0.5em;
+    text-align: left;
+    box-shadow: 10px 10px 5px lightgrey;
+}
+
+.li_other {
+    padding: 0.3em 0.2em 0.3em;
+    background-color: silver;
+}
+
+.li_a {
+    background-color: grey;
+    padding: 0em 0.3em 0.2em 0.3em;
+}
+
+.li_a a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+    
+.li_small_img {
+    background-color: grey;
+    text-align: center;
+}
+
+.li_small_img img {
+    margin: 0.7em 0.5em 0em 0.5em;
+}
+
+#form_project {
+    margin: auto;
+    width: 70%;
+}
+
+#form_project ul {
+    list-style-type : none;
+    display: inline;
+    padding: 0;
+}
+
+#form_project li {
+    display: inline;
+}
+
+#search_fields, #sort_by, #sort_order, #techniques {
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+
+/* skills sidan nedan */
+
+#main_skills ul {
+    
+    padding: 0;
+}
+
+#main_skills li {
+    text-decoration: none;
+    display: inline;
+}
+
+#main_skills li a{
+    text-decoration: none;
+    color: black;
+}
+
+#main_skills h2 {
+    margin-top: 1.5em;
+}
+
+
+/* project sidan nedan */
+
+#main_project {
+    width: 25%;
+    margin: auto;
+}
+
+#main_project ul{
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    box-shadow: 10px 10px 5px lightgrey;
+}
+
+.li_other {
+    background-color: silver;
+}
+
+.li_big_image {
+    background-color: grey;
+    text-align: center;
+}
+
+.li_big_image {
+    padding: 0.7em 0.5em 0.5em 0.5em;
+}
+
+
+/* home sidan nedan */
+
+#main_home {
+    width: 70%;
+    margin: auto;
+}   
+
+#last_project {
+    width: 20%;
+    display: inline-block;
+    vertical-align: left;
+}
+
+#last_project ul {
+    list-style-type: none;
+    padding: 0em;
+    text-align: left;
+    box-shadow: 10px 10px 5px lightgrey;
+}

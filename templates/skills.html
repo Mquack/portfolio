@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% block main %}
+
+<main id="main_skills">
+  {% for i in techniques %}
+  {% for j in technique_stats %}
+  {% if i == j %}
+  <h2>{{ i }}</h2>
+  <ul>
+    {% for k in technique_stats[j] %}
+    <li><a href="projects/{{ k['project_id'] }}">{{ k['project_name'] }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endfor %}
+  {% endfor %}
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "template.html" %}
+{% block main %}
+
+<div id="main_projects">
+  <form action="{{ url_for("projects") }}" method="post" id="form_project">
+    <fieldset>
+      <div>
+	<input name="search" type="txt" placeholder="search">
+	<button type="submit">Sök</button>
+      </div>
+
+      <div>
+      <legend id="search_fields">Search in</legend>
+	<ul>
+	  {% for key in key_list %}
+	  {% if key == 'project_name' %}
+	  <li><input name="search_fields" type="checkbox" value="{{ key }}" checked="checked"/>{{ key }}</li>
+	  {% else %}
+          <li><input name="search_fields" type="checkbox" value="{{ key }}"/>{{ key }}</li>
+	  {% endif %}
+	  {% endfor %}
+	</ul>
+      </div>
+
+      <div>
+      <legend id="sort_by">Sort by</legend>
+	<ul>
+	  {% for key in key_list %}
+	  {% if key == 'end_date' %}
+	  <li><input name="sort_by" type="radio" value="{{ key }}" checked="checked"/>{{ key }}</li>
+	  {% else %}
+          <li><input name="sort_by" type="radio" value="{{ key }}"/>{{ key }}</li>
+	  {% endif %}
+	  {% endfor %}
+	</ul>
+      </div>
+
+      <div>
+      <legend id="sort_order">Sort order</legend>
+	<ul>
+	  <li><input name="sort_order" type="radio" value="ascending"/> ascending </li>
+	  <li><input name="sort_order" type="radio" value="descending" checked="checked"/>descending</li>
+	</ul>
+      </div>
+
+      <div>
+      <legend id="techniques">Techniques</legend>
+	<ul>
+	  {% for technique in techniques %}
+	  {% if technique == "python" %}
+	  <li><input name="techniques" type="checkbox" value="{{ technique }}" checked="checked"/>{{ technique }}</li>
+	  {% else %}
+          <li><input name="techniques" type="checkbox" value="{{ technique }}"/>{{ technique }}</li>
+	  {% endif %}
+	  {% endfor %}
+	</ul>
+      </div>
+    </fieldset>
+  </form>
+
+  <div id="result_project">
+    {% for project in selected_list %}
+    <div class="div_projects">
+      <ul>
+	{% for key in key_list %}
+	{% if key == "project_name" %}
+	<li class="li_a"><a href="/projects/{{ project['project_id'] }}">{{ key }}: {{ project[key] }}</a></li>
+	{% elif key == "small_image" %}
+	<li class="li_small_img"><img alt="{{ project['project_id'] }}" src="/static/bilder/{{ project['project_id'] }}.png"/></li>
+	{% else %}
+	<li class="li_other">{{ key }}: {{ project[key] }}</li>
+	{% endif %}
+	{% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+
+    {% for project in selected_search_list %}
+    <div class="div_projects">
+      <ul>
+	{% for key in key_list %}
+	{% if key == "project_name" %}
+	<li class="li_a"><a href="projects/{{ project['project_id'] }}">{{ key }}: {{ project[key] }}</a></li>
+	{% elif key == "small_image" %}
+	<li class="li_small_img"><img alt="{{ project['project_id'] }}" src="/static/bilder/{{ project['project_id'] }}.png"/></li>
+	{% else %}
+	<li class="li_other">{{ key }}: {{ project[key] }}</li>
+	{% endif %}
+	{% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- {{ input_search }} -->
+
+{% endblock %}

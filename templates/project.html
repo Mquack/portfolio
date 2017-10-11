@@ -1,0 +1,18 @@
+{% extends "template.html" %}
+{% block main %}
+
+<h1>{{ project[0]["project_name"] }}</h1>
+
+<div id="main_project">
+  <ul>
+    <li class="li_big_image"><img alt="big_image" src="/static/bilder/{{ project[0]['project_id'] }}.png"/></li>
+    {% for key in full_key_list %}
+    {% if key == "big_image" %}
+    {% else %}
+    <li class="li_other">{{ key }}: {{ project[0][key] }}</li>
+    {% endif %}
+    {% endfor %}
+</ul>
+</div>
+
+{% endblock %}
